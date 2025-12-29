@@ -1,0 +1,98 @@
+nohup: 忽略输入
+W1229 13:44:00.851238 608006 site-packages/torch/distributed/run.py:793] 
+W1229 13:44:00.851238 608006 site-packages/torch/distributed/run.py:793] *****************************************
+W1229 13:44:00.851238 608006 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1229 13:44:00.851238 608006 site-packages/torch/distributed/run.py:793] *****************************************
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno 101] Network is unreachable>
+  data = fetch_version_info()
+Training in distributed mode with multiple processes, 1 GPU per process. Process 0, total 2.
+[12/29 13:44:13.154]: Command: run_PAT.py --data_name Multi-label-dataset --data_dir /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/data --model_name q2l_dinov3_vitl16_pretrain --pretrain_type oi --batch_size 16 --image_size 224 --logits_attention cross --print_freq 200 --early_stop
+[12/29 13:44:13.155]: Full config saved to ./outputs/Multi-label-dataset/cross_q2l_dinov3_vitl16_pretrain_dinov3_vitl16_oi_224_adamw_0.0001_0.0001_4_0.05_16_80_seed_1/config.json
+[12/29 13:44:13.155]: creating model...
+Training in distributed mode with multiple processes, 1 GPU per process. Process 1, total 2.
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+[12/29 13:44:21.559]: len(train_dataset)): 7000
+[12/29 13:44:21.559]: len(val_dataset)): 2000
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:359: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:359: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:394: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:394: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[rank1]:[W1229 13:44:22.907000063 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank0]:[W1229 13:44:22.907821626 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:224: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:224: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+[12/29 13:44:23.528]: Epoch [0/80], Step [000/437], LR 4.000e-06, Loss: 22.19
+[12/29 13:45:29.501]: Epoch [0/80], Step [200/437], LR 4.196e-06, Loss: 5.81
+[12/29 13:46:34.748]: Epoch [0/80], Step [400/437], LR 4.777e-06, Loss: 4.55
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:466: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT.py:466: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[12/29 13:46:49.639]: Test: [ 0/16]  Time 3.088 (3.088)  Mem 18746
+[12/29 13:47:11.448]: Calculating mAP:
+[12/29 13:47:11.534]: mAP score regular 95.9664, mAP score EMA 56.0375
+[12/29 13:47:11.534]: => Test Epoch: [ 0/80]  ETA 3:43:47  TT 0:02:49 (0:02:49)  mAP 95.96644  mAP_ema 56.03754
+[12/29 13:47:11.542]: 0 | Set best mAP 95.96643923487589 in ep 0
+[12/29 13:47:11.542]:    | best regular mAP 95.96643923487589 in ep 0
+[12/29 13:47:26.487]: Epoch [1/80], Step [000/437], LR 4.927e-06, Loss: 9.59
+[12/29 13:48:31.957]: Epoch [1/80], Step [200/437], LR 5.959e-06, Loss: 5.31
+[12/29 13:49:37.172]: Epoch [1/80], Step [400/437], LR 7.363e-06, Loss: 4.88
+[12/29 13:49:52.070]: Test: [ 0/16]  Time 3.087 (3.087)  Mem 18763
+W1229 13:50:02.611571 608006 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 608084 closing signal SIGTERM
+E1229 13:50:03.279461 608006 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -15) local_rank: 1 (pid: 608085) of binary: /home/lthpc/miniconda3/envs/weather/bin/python3.10
+Traceback (most recent call last):
+  File "/home/lthpc/miniconda3/envs/weather/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+run_PAT.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-29_13:50:02
+  host      : lthpc
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 608085)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 608085
+========================================================

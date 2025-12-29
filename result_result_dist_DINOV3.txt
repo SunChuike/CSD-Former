@@ -1,0 +1,81 @@
+nohup: 忽略输入
+W0908 22:50:39.372379 1261172 site-packages/torch/distributed/run.py:793] 
+W0908 22:50:39.372379 1261172 site-packages/torch/distributed/run.py:793] *****************************************
+W0908 22:50:39.372379 1261172 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0908 22:50:39.372379 1261172 site-packages/torch/distributed/run.py:793] *****************************************
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+Training in distributed mode with multiple processes, 1 GPU per process. Process 0, total 2.
+[09/08 22:50:44.284]: Command: run_inference_dist_1.py --data_name Multi-label-dataset --data_dir /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/data --model_name q2l_dinov3_vitl16_pretrain --pretrain_type oi --batch_size 16 --image_size 224 --distributed --logits_attention cross
+[09/08 22:50:44.284]: Full config saved to ./outputs/Multi-label-dataset/inference_dist_q2l_dinov3_vitl16_pretrain_oi_224_16/config.json
+[09/08 22:50:44.285]: creating model...
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Training in distributed mode with multiple processes, 1 GPU per process. Process 1, total 2.
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_inference_dist_1.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(args.resume, map_location=torch.device(args.local_rank if args.distributed else 0))
+[09/08 22:50:53.636]: len(val_dataset)): 2000
+[09/08 22:50:53.637]: => loading checkpoint '/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/outputs/Multi-label-dataset/cross_q2l_dinov3_vitl16_pretrain_dinov3_vitl16_oi_224_adamw_0.0001_0.0001_4_0.05_16_80_seed_1/model_best.pth.tar'
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_inference_dist_1.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(args.resume, map_location=torch.device(args.local_rank if args.distributed else 0))
+[09/08 22:50:58.117]: 96.8294419435449
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_inference_dist_1.py:247: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_inference_dist_1.py:247: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[09/08 22:51:00.793]: Test: [ 0/16]  Time 2.453 (2.453)  Mem 8394
+[09/08 22:51:13.410]: Calculating mAP:
+[09/08 22:51:13.584]: #####################################################################
+[09/08 22:51:13.585]: mAP ori 96.62
+[09/08 22:51:13.585]: CP 92.11, CR 90.18, CF1 91.14, OP 92.01, OR 90.95, OF1 91.48
+[09/08 22:51:13.585]: Top-3 CP 53.99, CR 99.27, CF1 69.94, OP 56.25, OR 99.44, OF1 71.85
+[09/08 22:51:13.585]: Precision ori: [array([88.559322, 92.359249, 89.298893, 92.325056, 98.029557])]
+[09/08 22:51:13.585]: Recall ori: [array([83.935743, 93.48711 , 87.207207, 91.294643, 94.988067])]
+[09/08 22:51:13.585]: Top-3 Precision ori: [array([39.123506, 74.356386, 49.280576, 45.932029, 61.23348 ])]
+[09/08 22:51:13.586]: Top-3 Recall ori: [array([98.594378, 99.932157, 98.738739, 99.553571, 99.522673])]
+[09/08 22:51:13.586]: #####################################################################
+[09/08 22:51:13.586]: mAP pat 96.64
+[09/08 22:51:13.586]: CP 91.68, CR 89.75, CF1 90.70, OP 91.62, OR 90.57, OF1 91.09
+[09/08 22:51:13.586]: Top-3 CP 55.83, CR 99.08, CF1 71.42, OP 56.18, OR 99.32, OF1 71.77
+[09/08 22:51:13.586]: Precision pat: [array([88.983051, 92.024129, 89.114391, 90.970655, 97.29064 ])]
+[09/08 22:51:13.586]: Recall pat: [array([84.337349, 93.147897, 87.027027, 89.955357, 94.272076])]
+[09/08 22:51:13.586]: Top-3 Precision pat: [array([45.821596, 73.945783, 39.229672, 44.939271, 75.22604 ])]
+[09/08 22:51:13.586]: Top-3 Recall pat: [array([97.991968, 99.932157, 99.099099, 99.107143, 99.28401 ])]
+[09/08 22:51:13.586]: #####################################################################
+[09/08 22:51:13.586]: mAP mix 96.83
+[09/08 22:51:13.586]: CP 92.28, CR 90.34, CF1 91.30, OP 92.16, OR 91.10, OF1 91.63
+[09/08 22:51:13.586]: Top-3 CP 54.79, CR 99.26, CF1 70.60, OP 56.25, OR 99.44, OF1 71.85
+[09/08 22:51:13.586]: Precision mix: [array([88.983051, 92.426273, 89.852399, 92.099323, 98.029557])]
+[09/08 22:51:13.587]: Recall mix: [array([84.337349, 93.554953, 87.747748, 91.071429, 94.988067])]
+[09/08 22:51:13.587]: Top-3 Precision mix: [array([41.525424, 73.982923, 44.381568, 45.233266, 68.811881])]
+[09/08 22:51:13.587]: Top-3 Recall mix: [array([98.393574, 99.932157, 98.918919, 99.553571, 99.522673])]
+[09/08 22:51:13.587]: #####################################################################
+(2000, 5) (2000, 5) (2000, 5)
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+[09/08 22:51:14.421]: 0.5, [83.7 96.2 89.5 83.9 96.8 89.9]
+[09/08 22:51:14.421]: 0.55, [85.4 95.5 90.2 85.5 96.3 90.5]
+[09/08 22:51:14.422]: 0.6, [86.9 94.9 90.8 86.9 95.8 91.2]
+[09/08 22:51:14.422]: 0.65, [88.3 94.2 91.1 88.2 95.1 91.5]
+[09/08 22:51:14.423]: 0.7, [89.5 93.1 91.3 89.3 94.2 91.7]
+[09/08 22:51:14.423]: 0.75, [90.7 92.3 91.5 90.4 93.5 91.9]
+[09/08 22:51:14.423]: 0.8, [92.  91.  91.5 91.7 92.3 92. ]
+[09/08 22:51:14.424]: 0.85, [93.5 89.8 91.6 92.9 91.1 92. ]
+[09/08 22:51:14.424]: 0.9, [94.4 88.  91.1 93.5 89.6 91.5]
+[09/08 22:51:14.425]: 0.95, [95.7 84.6 89.8 94.6 86.4 90.4]
+[rank0]:[W908 22:51:14.872572889 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

@@ -1,0 +1,242 @@
+nohup: 忽略输入
+W0908 18:31:27.059213 908700 site-packages/torch/distributed/run.py:793] 
+W0908 18:31:27.059213 908700 site-packages/torch/distributed/run.py:793] *****************************************
+W0908 18:31:27.059213 908700 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0908 18:31:27.059213 908700 site-packages/torch/distributed/run.py:793] *****************************************
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+No inplace_abn found, please make sure you won't use TResNet as backbone!
+Training in distributed mode with multiple processes, 1 GPU per process. Process 0, total 2.
+[09/08 18:31:31.656]: Command: run_PAT-T_K.py --data_name Multi-label-dataset --data_dir /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/data --model_name q2l_dinov3_vitl16_pretrain --pretrain_type oi --batch_size 16 --image_size 224 --logits_attention cross --print_freq 200 --early_stop
+[09/08 18:31:31.656]: Full config saved to ./outputs/Multi-label-dataset/cross_q2l_dinov3_vitl16_pretrain_dinov3_vitl16_oi_224_adamw_0.0001_0.0001_4_0.05_16_80_seed_1/config.json
+[09/08 18:31:31.656]: creating model...
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Training in distributed mode with multiple processes, 1 GPU per process. Process 1, total 2.
+Building DINOv3 backbone: dinov3_vitl16_pretrain
+Loading DINOv3 weights from: /home/lthpc/student/zby_weather/Multi-label-exp/MLC-base/pretrained/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+Query embeddings initialized from CLIP.
+set model.input_proj to Indentify!
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+[09/08 18:31:39.807]: len(train_dataset)): 7000
+[09/08 18:31:39.808]: len(val_dataset)): 2000
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/src_files/data/data.py:141: UserWarning: Argument(s) 'fog_coef_lower, fog_coef_upper' are not valid for transform RandomFog
+  A.RandomFog(fog_coef_lower=0.1, fog_coef_upper=0.4, p=0.2),
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:359: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:359: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:394: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:394: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[rank0]:[W908 18:31:41.687649824 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W908 18:31:42.001620273 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:224: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:224: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+[09/08 18:31:42.572]: Epoch [0/80], Step [000/437], LR 4.000e-06, Loss: 21.83
+[09/08 18:32:48.771]: Epoch [0/80], Step [200/437], LR 4.196e-06, Loss: 8.58
+[09/08 18:33:54.513]: Epoch [0/80], Step [400/437], LR 4.777e-06, Loss: 4.50
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:466: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/lthpc/student/zby_weather/Multi-label-exp/Paper/4-DINOV3+clip/dinov3/run_PAT-T_K.py:466: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[09/08 18:34:09.755]: Test: [ 0/16]  Time 3.325 (3.325)  Mem 18746
+[09/08 18:34:31.560]: Calculating mAP:
+[09/08 18:34:31.652]: mAP score regular 95.9639, mAP score EMA 55.9970
+[09/08 18:34:31.653]: => Test Epoch: [ 0/80]  ETA 3:46:15  TT 0:02:51 (0:02:51)  mAP 95.96392  mAP_ema 55.99704
+[09/08 18:34:31.659]: 0 | Set best mAP 95.96391636436977 in ep 0
+[09/08 18:34:31.659]:    | best regular mAP 95.96391636436977 in ep 0
+[09/08 18:34:39.060]: Epoch [1/80], Step [000/437], LR 4.927e-06, Loss: 10.08
+[09/08 18:35:45.198]: Epoch [1/80], Step [200/437], LR 5.959e-06, Loss: 6.75
+[09/08 18:36:50.661]: Epoch [1/80], Step [400/437], LR 7.363e-06, Loss: 3.29
+[09/08 18:37:05.677]: Test: [ 0/16]  Time 3.016 (3.016)  Mem 18763
+[09/08 18:37:27.642]: Calculating mAP:
+[09/08 18:37:27.707]: mAP score regular 96.4994, mAP score EMA 82.0297
+[09/08 18:37:27.708]: => Test Epoch: [ 1/80]  ETA 3:46:08  TT 0:02:56 (0:05:47)  mAP 96.49944  mAP_ema 82.02968
+[09/08 18:37:27.714]: 1 | Set best mAP 96.49943565831457 in ep 1
+[09/08 18:37:27.714]:    | best regular mAP 96.49943565831457 in ep 1
+[09/08 18:37:44.946]: Epoch [2/80], Step [000/437], LR 7.663e-06, Loss: 9.29
+[09/08 18:38:50.904]: Epoch [2/80], Step [200/437], LR 9.493e-06, Loss: 5.04
+[09/08 18:39:56.667]: Epoch [2/80], Step [400/437], LR 1.167e-05, Loss: 2.16
+[09/08 18:40:11.261]: Test: [ 0/16]  Time 2.613 (2.613)  Mem 18763
+[09/08 18:40:33.025]: Calculating mAP:
+[09/08 18:40:33.091]: mAP score regular 96.5725, mAP score EMA 90.8090
+[09/08 18:40:33.091]: => Test Epoch: [ 2/80]  ETA 3:48:07  TT 0:03:05 (0:08:53)  mAP 96.57251  mAP_ema 90.80898
+[09/08 18:40:33.098]: 2 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:40:33.098]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:40:48.726]: Epoch [3/80], Step [000/437], LR 1.210e-05, Loss: 10.27
+[09/08 18:41:55.113]: Epoch [3/80], Step [200/437], LR 1.466e-05, Loss: 3.97
+[09/08 18:43:01.661]: Epoch [3/80], Step [400/437], LR 1.752e-05, Loss: 2.03
+[09/08 18:43:16.556]: Test: [ 0/16]  Time 3.016 (3.016)  Mem 18764
+[09/08 18:43:38.255]: Calculating mAP:
+[09/08 18:43:38.341]: mAP score regular 96.4425, mAP score EMA 93.8991
+[09/08 18:43:38.341]: => Test Epoch: [ 3/80]  ETA 3:47:32  TT 0:03:05 (0:11:58)  mAP 96.44251  mAP_ema 93.89905
+[09/08 18:43:38.349]: 3 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:43:38.349]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:43:39.833]: Epoch [4/80], Step [000/437], LR 1.808e-05, Loss: 10.50
+[09/08 18:44:45.632]: Epoch [4/80], Step [200/437], LR 2.126e-05, Loss: 4.39
+[09/08 18:45:51.588]: Epoch [4/80], Step [400/437], LR 2.470e-05, Loss: 5.18
+[09/08 18:46:06.128]: Test: [ 0/16]  Time 2.676 (2.676)  Mem 18764
+[09/08 18:46:27.855]: Calculating mAP:
+[09/08 18:46:27.925]: mAP score regular 96.1976, mAP score EMA 95.1734
+[09/08 18:46:27.925]: => Test Epoch: [ 4/80]  ETA 3:42:01  TT 0:02:49 (0:14:48)  mAP 96.19755  mAP_ema 95.17341
+[09/08 18:46:27.932]: 4 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:46:27.932]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:46:28.926]: Epoch [5/80], Step [000/437], LR 2.536e-05, Loss: 7.11
+[09/08 18:47:34.942]: Epoch [5/80], Step [200/437], LR 2.905e-05, Loss: 3.88
+[09/08 18:48:40.909]: Epoch [5/80], Step [400/437], LR 3.292e-05, Loss: 0.98
+[09/08 18:48:55.459]: Test: [ 0/16]  Time 2.700 (2.700)  Mem 18764
+[09/08 18:49:17.155]: Calculating mAP:
+[09/08 18:49:17.227]: mAP score regular 96.1085, mAP score EMA 95.8040
+[09/08 18:49:17.228]: => Test Epoch: [ 5/80]  ETA 3:37:21  TT 0:02:49 (0:17:37)  mAP 96.10853  mAP_ema 95.80404
+[09/08 18:49:17.234]: 5 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:49:17.234]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:49:18.409]: Epoch [6/80], Step [000/437], LR 3.366e-05, Loss: 11.47
+[09/08 18:50:24.518]: Epoch [6/80], Step [200/437], LR 3.771e-05, Loss: 5.73
+[09/08 18:51:30.537]: Epoch [6/80], Step [400/437], LR 4.188e-05, Loss: 1.51
+[09/08 18:51:45.553]: Test: [ 0/16]  Time 3.122 (3.122)  Mem 18764
+[09/08 18:52:07.014]: Calculating mAP:
+[09/08 18:52:07.099]: mAP score regular 95.6072, mAP score EMA 96.1795
+[09/08 18:52:07.100]: => Test Epoch: [ 6/80]  ETA 3:33:18  TT 0:02:49 (0:20:27)  mAP 95.60717  mAP_ema 96.17951
+[09/08 18:52:07.107]: 6 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:52:07.107]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:52:07.986]: Epoch [7/80], Step [000/437], LR 4.267e-05, Loss: 16.93
+[09/08 18:53:14.014]: Epoch [7/80], Step [200/437], LR 4.693e-05, Loss: 1.39
+[09/08 18:54:19.855]: Epoch [7/80], Step [400/437], LR 5.123e-05, Loss: 0.76
+[09/08 18:54:34.670]: Test: [ 0/16]  Time 2.881 (2.881)  Mem 18764
+[09/08 18:54:56.339]: Calculating mAP:
+[09/08 18:54:56.405]: mAP score regular 95.5072, mAP score EMA 96.4149
+[09/08 18:54:56.406]: => Test Epoch: [ 7/80]  ETA 3:29:29  TT 0:02:49 (0:23:16)  mAP 95.50716  mAP_ema 96.41490
+[09/08 18:54:56.412]: 7 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:54:56.412]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:54:57.817]: Epoch [8/80], Step [000/437], LR 5.203e-05, Loss: 9.58
+[09/08 18:56:03.982]: Epoch [8/80], Step [200/437], LR 5.634e-05, Loss: 1.65
+[09/08 18:57:09.764]: Epoch [8/80], Step [400/437], LR 6.061e-05, Loss: 4.01
+[09/08 18:57:24.611]: Test: [ 0/16]  Time 2.960 (2.960)  Mem 18764
+[09/08 18:57:46.072]: Calculating mAP:
+[09/08 18:57:46.137]: mAP score regular 95.5194, mAP score EMA 96.5517
+[09/08 18:57:46.138]: => Test Epoch: [ 8/80]  ETA 3:25:56  TT 0:02:49 (0:26:06)  mAP 95.51940  mAP_ema 96.55169
+[09/08 18:57:46.144]: 8 | Set best mAP 96.57250585758975 in ep 2
+[09/08 18:57:46.144]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 18:57:47.456]: Epoch [9/80], Step [000/437], LR 6.140e-05, Loss: 10.21
+[09/08 18:58:53.682]: Epoch [9/80], Step [200/437], LR 6.558e-05, Loss: 3.83
+[09/08 18:59:59.292]: Epoch [9/80], Step [400/437], LR 6.966e-05, Loss: 1.39
+[09/08 19:00:13.960]: Test: [ 0/16]  Time 2.762 (2.762)  Mem 18764
+[09/08 19:00:35.699]: Calculating mAP:
+[09/08 19:00:35.764]: mAP score regular 95.4771, mAP score EMA 96.6503
+[09/08 19:00:35.765]: => Test Epoch: [ 9/80]  ETA 3:22:31  TT 0:02:49 (0:28:55)  mAP 95.47711  mAP_ema 96.65027
+[09/08 19:00:35.771]: 9 | Set best mAP 96.65026660562319 in ep 9
+[09/08 19:00:35.771]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:00:52.869]: Epoch [10/80], Step [000/437], LR 7.040e-05, Loss: 8.39
+[09/08 19:01:59.213]: Epoch [10/80], Step [200/437], LR 7.431e-05, Loss: 8.72
+[09/08 19:03:04.973]: Epoch [10/80], Step [400/437], LR 7.803e-05, Loss: 0.79
+[09/08 19:03:20.117]: Test: [ 0/16]  Time 3.096 (3.096)  Mem 18765
+[09/08 19:03:41.726]: Calculating mAP:
+[09/08 19:03:41.804]: mAP score regular 95.6037, mAP score EMA 96.7330
+[09/08 19:03:41.805]: => Test Epoch: [10/80]  ETA 3:20:56  TT 0:03:06 (0:32:01)  mAP 95.60373  mAP_ema 96.73300
+[09/08 19:03:41.811]: 10 | Set best mAP 96.73299884575103 in ep 10
+[09/08 19:03:41.812]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:03:58.027]: Epoch [11/80], Step [000/437], LR 7.870e-05, Loss: 18.32
+[09/08 19:05:03.950]: Epoch [11/80], Step [200/437], LR 8.217e-05, Loss: 0.53
+[09/08 19:06:09.250]: Epoch [11/80], Step [400/437], LR 8.540e-05, Loss: 1.42
+[09/08 19:06:23.763]: Test: [ 0/16]  Time 2.735 (2.735)  Mem 18765
+[09/08 19:06:45.417]: Calculating mAP:
+[09/08 19:06:45.501]: mAP score regular 95.1879, mAP score EMA 96.8055
+[09/08 19:06:45.502]: => Test Epoch: [11/80]  ETA 3:18:52  TT 0:03:03 (0:35:05)  mAP 95.18791  mAP_ema 96.80548
+[09/08 19:06:45.510]: 11 | Set best mAP 96.8054758721703 in ep 11
+[09/08 19:06:45.510]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:06:59.975]: Epoch [12/80], Step [000/437], LR 8.597e-05, Loss: 10.41
+[09/08 19:08:05.826]: Epoch [12/80], Step [200/437], LR 8.887e-05, Loss: 2.02
+[09/08 19:09:11.455]: Epoch [12/80], Step [400/437], LR 9.148e-05, Loss: 2.97
+[09/08 19:09:25.907]: Test: [ 0/16]  Time 2.622 (2.622)  Mem 18765
+[09/08 19:09:47.872]: Calculating mAP:
+[09/08 19:09:47.941]: mAP score regular 95.0848, mAP score EMA 96.8272
+[09/08 19:09:47.941]: => Test Epoch: [12/80]  ETA 3:16:32  TT 0:03:02 (0:38:08)  mAP 95.08482  mAP_ema 96.82724
+[09/08 19:09:47.948]: 12 | Set best mAP 96.8272447688463 in ep 12
+[09/08 19:09:47.948]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:10:03.628]: Epoch [13/80], Step [000/437], LR 9.193e-05, Loss: 12.52
+[09/08 19:11:09.233]: Epoch [13/80], Step [200/437], LR 9.416e-05, Loss: 0.47
+[09/08 19:12:15.103]: Epoch [13/80], Step [400/437], LR 9.605e-05, Loss: 1.98
+[09/08 19:12:29.533]: Test: [ 0/16]  Time 2.569 (2.569)  Mem 18765
+[09/08 19:12:51.262]: Calculating mAP:
+[09/08 19:12:51.332]: mAP score regular 94.0073, mAP score EMA 96.8294
+[09/08 19:12:51.332]: => Test Epoch: [13/80]  ETA 3:14:11  TT 0:03:03 (0:41:11)  mAP 94.00734  mAP_ema 96.82944
+[09/08 19:12:51.338]: 13 | Set best mAP 96.8294419435449 in ep 13
+[09/08 19:12:51.339]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:13:07.981]: Epoch [14/80], Step [000/437], LR 9.636e-05, Loss: 12.63
+[09/08 19:14:13.671]: Epoch [14/80], Step [200/437], LR 9.783e-05, Loss: 0.49
+[09/08 19:15:19.442]: Epoch [14/80], Step [400/437], LR 9.892e-05, Loss: 0.32
+[09/08 19:15:33.970]: Test: [ 0/16]  Time 2.709 (2.709)  Mem 18765
+[09/08 19:15:55.676]: Calculating mAP:
+[09/08 19:15:55.740]: mAP score regular 95.1253, mAP score EMA 96.8079
+[09/08 19:15:55.740]: => Test Epoch: [14/80]  ETA 3:11:49  TT 0:03:04 (0:44:15)  mAP 95.12526  mAP_ema 96.80794
+[09/08 19:15:55.746]: 14 | Set best mAP 96.8294419435449 in ep 13
+[09/08 19:15:55.747]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:15:56.626]: Epoch [15/80], Step [000/437], LR 9.909e-05, Loss: 9.84
+[09/08 19:17:02.147]: Epoch [15/80], Step [200/437], LR 9.973e-05, Loss: 0.50
+[09/08 19:18:07.493]: Epoch [15/80], Step [400/437], LR 9.999e-05, Loss: 0.44
+[09/08 19:18:21.917]: Test: [ 0/16]  Time 2.623 (2.623)  Mem 18765
+[09/08 19:18:43.646]: Calculating mAP:
+[09/08 19:18:43.731]: mAP score regular 94.7925, mAP score EMA 96.7774
+[09/08 19:18:43.731]: => Test Epoch: [15/80]  ETA 3:08:15  TT 0:02:47 (0:47:03)  mAP 94.79249  mAP_ema 96.77743
+[09/08 19:18:43.738]: 15 | Set best mAP 96.8294419435449 in ep 13
+[09/08 19:18:43.739]:    | best regular mAP 96.57250585758975 in ep 2
+[09/08 19:18:43.739]: epoch - best_epoch = 2, stop!
+Best mAP: 96.8294419435449
+[rank0]:[W908 19:18:44.118224021 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank1]:[E908 19:28:44.375150219 ProcessGroupNCCL.cpp:616] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=314665, OpType=ALLREDUCE, NumelIn=27663, NumelOut=27663, Timeout(ms)=600000) ran for 600069 milliseconds before timing out.
+[rank1]:[E908 19:28:44.375763866 ProcessGroupNCCL.cpp:1785] [PG ID 0 PG GUID 0(default_pg) Rank 1] Exception (either an error or timeout) detected by watchdog at work: 314665, last enqueued NCCL work: 314709, last completed NCCL work: 314664.
+[rank1]:[E908 19:30:03.824427527 ProcessGroupNCCL.cpp:1834] [PG ID 0 PG GUID 0(default_pg) Rank 1] Timeout at NCCL work: 314665, last enqueued NCCL work: 314709, last completed NCCL work: 314664.
+[rank1]:[E908 19:30:03.824473967 ProcessGroupNCCL.cpp:630] [Rank 1] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E908 19:30:03.824481108 ProcessGroupNCCL.cpp:636] [Rank 1] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E908 19:30:03.825751817 ProcessGroupNCCL.cpp:1595] [PG ID 0 PG GUID 0(default_pg) Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=314665, OpType=ALLREDUCE, NumelIn=27663, NumelOut=27663, Timeout(ms)=600000) ran for 600069 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x7f7bc7685446 in /home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x7f7bc898a672 in /home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x7f7bc8991ab3 in /home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x7f7bc899351d in /home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x7f7c155be5c0 in /home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x8609 (0x7f7c1ceaf609 in /lib/x86_64-linux-gnu/libpthread.so.0)
+frame #6: clone + 0x43 (0x7f7c1cdd4353 in /lib/x86_64-linux-gnu/libc.so.6)
+
+E0908 19:30:04.189785 908700 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -6) local_rank: 1 (pid: 908797) of binary: /home/lthpc/miniconda3/envs/weather/bin/python3.10
+Traceback (most recent call last):
+  File "/home/lthpc/miniconda3/envs/weather/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/lthpc/miniconda3/envs/weather/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+run_PAT-T_K.py FAILED
+-------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-09-08_19:30:04
+  host      : lthpc
+  rank      : 1 (local_rank: 1)
+  exitcode  : -6 (pid: 908797)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 908797
+=======================================================
